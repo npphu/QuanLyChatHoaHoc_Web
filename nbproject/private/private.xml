@@ -4,15 +4,21 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/xampp/htdocs/QLChatHoaHoc/them_chat.php</file>
+            <file>file:/C:/xampp/htdocs/QLChatHoaHoc/xoa_chat.php</file>
             <file>file:/C:/xampp/htdocs/QLChatHoaHoc/dang_nhap.php</file>
             <file>file:/C:/xampp/htdocs/QLChatHoaHoc/them_phan_ung.php</file>
-            <file>file:/C:/xampp/htdocs/QLChatHoaHoc/index.php</file>
+            <file>file:/C:/xampp/htdocs/QLChatHoaHoc/xoa_phan_ung.php</file>
             <file>file:/C:/xampp/htdocs/QLChatHoaHoc/them_loai_chat.php</file>
+            <file>file:/C:/xampp/htdocs/QLChatHoaHoc/loai_chat_hoa_hoc.php</file>
+            <file>file:/C:/xampp/htdocs/QLChatHoaHoc/sua_loai_phan_ung.php</file>
+            <file>file:/C:/xampp/htdocs/QLChatHoaHoc/loai_phan_ung.php</file>
+            <file>file:/C:/xampp/htdocs/QLChatHoaHoc/xoa_loai_phan_ung.php</file>
+            <file>file:/C:/xampp/htdocs/QLChatHoaHoc/sua_loai_chat.php</file>
+            <file>file:/C:/xampp/htdocs/QLChatHoaHoc/index.php</file>
+            <file>file:/C:/xampp/htdocs/QLChatHoaHoc/xoa_loai_chat.php</file>
+            <file>file:/C:/xampp/htdocs/QLChatHoaHoc/sua_chat.php</file>
             <file>file:/C:/xampp/htdocs/QLChatHoaHoc/chat_hoa_hoc.php</file>
             <file>file:/C:/xampp/htdocs/QLChatHoaHoc/DBConnect.php</file>
-            <file>file:/C:/xampp/htdocs/QLChatHoaHoc/loai_chat_hoa_hoc.php</file>
-            <file>file:/C:/xampp/htdocs/QLChatHoaHoc/them_loai_phan_ung.php</file>
-            <file>file:/C:/xampp/htdocs/QLChatHoaHoc/loai_phan_ung.php</file>
             <file>file:/C:/xampp/htdocs/QLChatHoaHoc/phan_ung_hoa_hoc.php</file>
         </group>
     </open-files>

@@ -67,9 +67,7 @@ if (!isset($_SESSION['Admin'])) {
                                             <th class="center">
                                                 Loại chất
                                             </th>
-                                            <th class="center">
-                                                Mô tả
-                                            </th>
+                                           
                                             <th class="center" >
                                                 Hình ảnh
                                             </th>
@@ -81,7 +79,7 @@ if (!isset($_SESSION['Admin'])) {
                                                     $conn = new DbConnect();
                                                     $name=$conn->query("set names 'utf8'");  
                                                   
-                                                    $chat = $conn->query("SELECT * from chathoahoc order by TenHoaHoc ");                                            
+                                                    $chat = $conn->query("SELECT * from chathoahoc, loaichathoahoc where chathoahoc.LoaiChat = loaichathoahoc.IdLoai order by TenHoaHoc ");                                            
                                                     while($row= mysqli_fetch_array($chat))
                                                     {
                                                 ?>          <tr>
@@ -94,20 +92,16 @@ if (!isset($_SESSION['Admin'])) {
                                                                     </td>
                                                                     
                                                                     <td class="center" style="vertical-align: middle">
-                                                                        <?php echo $row['LoaiChat']; ?>
+                                                                        <?php echo $row['TenLoai']; ?>
                                                                     </td>
-                                                                    
-                                                                    <td class="center" style="vertical-align: middle">
-                                                                        <?php echo $row['MoTa']; ?>
-                                                                    </td>
-                                                                    
+                                                                                                                                                                                                    
                                                                      <td class="center" style="vertical-align: middle">
                                                                          <img src="images/ChatHoaHoc/<?php echo $row['HinhAnh']; ?>" style="width:30px" />
                                                                     </td>
                                                                     
                                                                     <td class="center" style="vertical-align: middle">
-                                                                        <a href="sua_chat.php?IdMonAn='.$row['IdMonAn'].'">  <img src="images/icon-update.png" style="width: 40px; height: 40px" title="Sửa món ăn" alt=""/> </a>                          
-                                                                        <a href="xoa_chat.php?IdMonAn='.$row['IdMonAn'].'" title="BCDONLINE CONFIRM YES/ NO" onclick="return confirmAction()">  <img src="images/icon-delete.png" style="width: 40px; height: 40px" title="Xóa món ăn" alt=""/> </a>                                           
+                                                                        <a href="sua_chat.php?IdChat=<?php echo $row['IdChat'] ?>">  <img src="images/icon-update.png" style="width: 40px; height: 40px" title="Sửa" alt=""/> </a>                          
+                                                                        <a href="xoa_chat.php?IdChat=<?php echo $row['IdChat'] ?>" title="BCDONLINE CONFIRM YES/ NO" onclick="return confirmAction()">  <img src="images/icon-delete.png" style="width: 40px; height: 40px" title="Xóa" alt=""/> </a>                                           
                                                                     </td>
                                                                 </tr>
                                                 <?php

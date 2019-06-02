@@ -21,7 +21,7 @@
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <h3 class="register-heading">NHẬP THÔNG TIN PHẢN ỨNG</h3>
-                            <form action="them_phan_ung.php" method="post" enctype="multipart/form-data">
+                            <form action="" method="post" enctype="multipart/form-data">
                                 <div class="row register-form">
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -32,14 +32,13 @@
                                                 $conn = new DbConnect();
                                                 $name = $conn->query("set names 'utf8'");
                                                 $ds = $conn->query('Select * from ChatHoaHoc');
-                                                 while ($row = $ds -> fetch_assoc())            
-                                                {
-                                                    echo '<option value="'.$row['TenHoaHoc'].'">'.$row['TenHoaHoc'].'</option>';                                                                                                   
-                                                } 
-                                            ?>         
+                                                while ($row = $ds->fetch_assoc()) {
+                                                    echo '<option value="' . $row['TenHoaHoc'] . '">' . $row['TenHoaHoc'] . '</option>';
+                                                }
+                                                ?>         
                                             </select>
                                         </div>     
-                                       <div class="form-group">
+                                        <div class="form-group">
                                             <select class="form-control" name="Chat2">
                                                 <option class="hidden"  selected disabled>Chọn chất 2</option>
                                                 <?php
@@ -47,11 +46,10 @@
                                                 $conn = new DbConnect();
                                                 $name = $conn->query("set names 'utf8'");
                                                 $ds = $conn->query('Select * from ChatHoaHoc');
-                                                 while ($row = $ds -> fetch_assoc())            
-                                                {
-                                                     echo '<option value="'.$row['TenHoaHoc'].'">'.$row['TenHoaHoc'].'</option>';                                                                                                   
-                                                } 
-                                            ?>         
+                                                while ($row = $ds->fetch_assoc()) {
+                                                    echo '<option value="' . $row['TenHoaHoc'] . '">' . $row['TenHoaHoc'] . '</option>';
+                                                }
+                                                ?>         
                                             </select>
                                         </div>     
                                         <div class="form-group">
@@ -62,14 +60,13 @@
                                                 $conn = new DbConnect();
                                                 $name = $conn->query("set names 'utf8'");
                                                 $ds = $conn->query('Select * from ChatHoaHoc');
-                                                 while ($row = $ds -> fetch_assoc())            
-                                                {
-                                                     echo '<option value="'.$row['TenHoaHoc'].'">'.$row['TenHoaHoc'].'</option>';                                                                                                   
-                                                } 
-                                            ?>         
+                                                while ($row = $ds->fetch_assoc()) {
+                                                    echo '<option value="' . $row['TenHoaHoc'] . '">' . $row['TenHoaHoc'] . '</option>';
+                                                }
+                                                ?>         
                                             </select>
                                         </div>     
-                                       
+
                                     </div>
                                     <div class="col-md-6"> 
                                         <div class="form-group">
@@ -80,13 +77,13 @@
                                                 $conn = new DbConnect();
                                                 $name = $conn->query("set names 'utf8'");
                                                 $ds = $conn->query('Select * from ChatHoaHoc');
-                                                 while ($row = $ds -> fetch_assoc())            
-                                                {
-                                                     echo '<option value="'.$row['TenHoaHoc'].'">'.$row['TenHoaHoc'].'</option>';                                                                                                   
-                                                } 
-                                            ?>         
+                                                while ($row = $ds->fetch_assoc()) {
+                                                    echo '<option value="' . $row['TenHoaHoc'] . '">' . $row['TenHoaHoc'] . '</option>';
+                                                }
+                                                ?>         
                                             </select>
                                         </div>     
+                                        
                                         <div class="form-group">
                                             <select class="form-control" name="LoaiPU">
                                                 <option class="hidden"  selected disabled>Chọn loại PƯ</option>
@@ -95,16 +92,18 @@
                                                 $conn = new DbConnect();
                                                 $name = $conn->query("set names 'utf8'");
                                                 $ds = $conn->query('Select * from LoaiPhanUng');
-                                                 while ($row = $ds -> fetch_assoc())            
-                                                {
-                                                    echo '<option value="'.$row['IdLoaiPhanUng'].'">'.$row['TenLoaiPhanUng'].'</option>';                                                                                                   
-                                                } 
-                                            ?>         
+                                                while ($row = $ds->fetch_assoc()) {
+                                                    echo '<option value="' . $row['IdLoaiPhanUng'] . '">' . $row['TenLoaiPhanUng'] . '</option>';
+                                                }
+                                                ?>         
                                             </select>
                                         </div>      
-                                                                                          
-                                          <div class="form-group">
-                                             <input type="file" class="form-control"  name="txtAnh" value="" required=""/>
+
+                                        <div class="form-group">
+                                            <input type="file" class="form-control"  name="txtAnh" value="" required=""/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="file" class="form-control"  name="txtAudio" accept=""  value="" required=""/>
                                         </div>
                                         <input type="submit" tabindex="1" class="btnRegister"  value="Save" name="btnDangKy"/>
                                     </div>
@@ -118,27 +117,29 @@
         <?php
         require_once 'DBConnect.php';
         if (isset($_POST['btnDangKy'])) {
-            
+
             $chat1 = $_POST['Chat1'];
             $chat2 = $_POST['Chat2'];
             $sp1 = $_POST['SP1'];
             $sp2 = $_POST['SP2'];
             $loaipu = $_POST['LoaiPU'];
             $file = $_FILES['txtAnh'];
-            if(!isset($_FILES['txtAnh']))
-            {
-                echo '<script>alert("Lỗi."); </script>';  
+            $fileau = $_FILES['txtAudio'];
+            
+            if (!isset($_FILES['txtAnh']) || !isset($_FILES['txtAudio'])) {
+                echo '<script>alert("Lỗi."); </script>';
             }
-            move_uploaded_file($file['tmp_name'], 'images/PhanUng/'.$file['name']);
+            move_uploaded_file($file['tmp_name'], 'images/PhanUng/' . $file['name']);
             
+            move_uploaded_file($fileau['tmp_name'], 'audios/'.$fileau['name']);
             
+            $conn = new DbConnect();
+            $name = $conn->query("set names 'utf8'");
+            $conn->ThemPhanUng($chat1, $chat2, $sp1, $sp2, $loaipu, $file['name'], $fileau['name']);
             
-                $conn = new DbConnect();
-                $name = $conn->query("set names 'utf8'");
-                $conn->ThemPhanUng($chat1, $chat2, $sp1,$sp2, $loaipu, $file['name']);
-                echo '<script>alert("Thêm thành công."); </script>';
-                echo '<script>window.location = "phan_ung_hoa_hoc.php"; </script>';
-            }       
+            echo '<script>alert("Thêm thành công."); </script>';
+            echo '<script>window.location = "phan_ung_hoa_hoc.php"; </script>';
+        }
         ?>
     </body>
 </html>

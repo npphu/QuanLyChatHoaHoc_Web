@@ -76,6 +76,9 @@ if (!isset($_SESSION['Admin'])) {
                                             <th class="center" >
                                                 Hình ảnh
                                             </th>
+                                            <th class="center" >
+                                                Âm thanh
+                                            </th>
                                             <th class="center">Tùy chọn</th>
                                         </tr>
                                     </thead>
@@ -110,10 +113,13 @@ if (!isset($_SESSION['Admin'])) {
                                             <td class="center" style="vertical-align: middle">
                                                 <img src="images/PhanUng/<?php echo $row['HinhAnh']; ?>" style="width:30px" />
                                             </td>
+                                            
+                                            <td class="center" style="vertical-align: middle">                                             
+                                                <audio width="300" height="32" src="audios/<?php echo $row['AmThanh']; ?>" controls="controls" />
+                                            </td>
 
-                                            <td class="center" style="vertical-align: middle">
-                                                <a href="sua_chat.php?IdMonAn='.$row['IdMonAn'].'">  <img src="images/icon-update.png" style="width: 40px; height: 40px" title="Sửa món ăn" alt=""/> </a>                          
-                                                <a href="xoa_chat.php?IdMonAn='.$row['IdMonAn'].'" title="BCDONLINE CONFIRM YES/ NO" onclick="return confirmAction()">  <img src="images/icon-delete.png" style="width: 40px; height: 40px" title="Xóa món ăn" alt=""/> </a>                                           
+                                            <td class="center" style="vertical-align: middle">                                                                      
+                                                <a href="xoa_phan_ung.php?IdPhanUng=<?php echo $row['IdPhanUng'] ?>" title="BCDONLINE CONFIRM YES/ NO" onclick="return confirmAction()">  <img src="images/icon-delete.png" style="width: 40px; height: 40px" title="Xóa món ăn" alt=""/> </a>                                           
                                             </td>
                                         </tr>
                                         <?php

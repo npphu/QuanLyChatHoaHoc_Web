@@ -86,8 +86,8 @@ if (!isset($_SESSION['Admin'])) {
                                             </td>
                                           
                                             <td class="center" style="vertical-align: middle">
-                                                <a href="sua_loai_chat.php?IdMonAn='.$row['IdMonAn'].'">  <img src="images/icon-update.png" style="width: 40px; height: 40px" title="Sửa món ăn" alt=""/> </a>                          
-                                                <a href="xoa_loai_chat.php?IdMonAn='.$row['IdMonAn'].'" title="BCDONLINE CONFIRM YES/ NO" onclick="return confirmAction()">  <img src="images/icon-delete.png" style="width: 40px; height: 40px" title="Xóa món ăn" alt=""/> </a>                                           
+                                                <a href="sua_loai_phan_ung.php?IdLoaiPhanUng=<?php echo $row['IdLoaiPhanUng'] ?>">  <img src="images/icon-update.png" style="width: 40px; height: 40px" title="Sửa món ăn" alt=""/> </a>                          
+                                                <a href="xoa_loai_phan_ung.php?IdLoaiPhanUng=<?php echo $row['IdLoaiPhanUng'] ?>" title="BCDONLINE CONFIRM YES/ NO" onclick="return confirmAction()">  <img src="images/icon-delete.png" style="width: 40px; height: 40px" title="Xóa món ăn" alt=""/> </a>                                           
                                             </td>
                                         </tr>
                                         <?php
