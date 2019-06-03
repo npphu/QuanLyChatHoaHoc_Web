@@ -1,4 +1,4 @@
-
+﻿
 <!DOCTYPE html>
 <?php
 session_start();
@@ -87,7 +87,7 @@ if (!isset($_SESSION['Admin'])) {
                                     $conn = new DbConnect();
                                     $name = $conn->query("set names 'utf8'");
 
-                                    $chat = $conn->query("SELECT * from phanung, loaiphanung  order by ChatThamGia1 ");
+                                    $chat = $conn->query("SELECT * from phanung, loaiphanung where phanung.LoaiPhanUng = loaiphanung.IdLoaiPhanUng");
                                     while ($row = mysqli_fetch_array($chat)) {
                                         ?>          <tr>
                                             <td class="center" style="vertical-align: middle">
@@ -143,8 +143,8 @@ if (!isset($_SESSION['Admin'])) {
         return confirm("Bạn có chắc muốn xóa món ăn này không ?")
     }
 </SCRIPT>
-<script src="./css-js/themes/js/common.js"></script>
-<script src="./css-js/themes/js/jquery.flexslider-min.js"></script>
+<script src="css-js/themes/js/common.js"></script>
+<script src="css-js/themes/js/jquery.flexslider-min.js"></script>
 <script type="text/javascript">
     $(function () {
         $(document).ready(function () {

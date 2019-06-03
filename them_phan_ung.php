@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -100,9 +100,11 @@
                                         </div>      
 
                                         <div class="form-group">
+					<p>Chọn hình ảnh PƯ</p>
                                             <input type="file" class="form-control"  name="txtAnh" value="" required=""/>
                                         </div>
                                         <div class="form-group">
+					<p>Chọn âm thanh PƯ</p>
                                             <input type="file" class="form-control"  name="txtAudio" accept=""  value="" required=""/>
                                         </div>
                                         <input type="submit" tabindex="1" class="btnRegister"  value="Save" name="btnDangKy"/>
@@ -126,7 +128,7 @@
             $file = $_FILES['txtAnh'];
             $fileau = $_FILES['txtAudio'];
             
-            if (!isset($_FILES['txtAnh']) || !isset($_FILES['txtAudio'])) {
+            if (!isset($_FILES['txtAnh'])) {
                 echo '<script>alert("Lỗi."); </script>';
             }
             move_uploaded_file($file['tmp_name'], 'images/PhanUng/' . $file['name']);

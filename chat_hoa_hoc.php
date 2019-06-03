@@ -1,4 +1,4 @@
-
+﻿
 <!DOCTYPE html>
 <?php
 session_start();
@@ -125,8 +125,8 @@ if (!isset($_SESSION['Admin'])) {
                 return confirm("Bạn có chắc muốn xóa món ăn này không ?")
               }
         </SCRIPT>
-         <script src="./css-js/themes/js/common.js"></script>
-        <script src="./css-js/themes/js/jquery.flexslider-min.js"></script>
+         <script src="css-js/themes/js/common.js"></script>
+        <script src="css-js/themes/js/jquery.flexslider-min.js"></script>
         <script type="text/javascript">
             $(function () {
                 $(document).ready(function () {
