@@ -31,8 +31,8 @@
                                                 require_once 'DBConnect.php';
                                                 $conn = new DbConnect();
                                                 $name = $conn->query("set names 'utf8'");
-                                                $ds = $conn->query('Select * from ChatHoaHoc');
-                                                while ($row = $ds->fetch_assoc()) {
+                                                $ds = $conn->query('Select * from ChatHoaHoc order by TenHoaHoc asc');
+                                                while ($row= mysqli_fetch_array($ds)) {
                                                     echo '<option value="' . $row['TenHoaHoc'] . '">' . $row['TenHoaHoc'] . '</option>';
                                                 }
                                                 ?>         
@@ -45,8 +45,8 @@
                                                 require_once 'DBConnect.php';
                                                 $conn = new DbConnect();
                                                 $name = $conn->query("set names 'utf8'");
-                                                $ds = $conn->query('Select * from ChatHoaHoc');
-                                                while ($row = $ds->fetch_assoc()) {
+                                                $ds = $conn->query('Select * from ChatHoaHoc order by TenHoaHoc asc');
+                                                while ($row= mysqli_fetch_array($ds)) {
                                                     echo '<option value="' . $row['TenHoaHoc'] . '">' . $row['TenHoaHoc'] . '</option>';
                                                 }
                                                 ?>         
@@ -59,8 +59,8 @@
                                                 require_once 'DBConnect.php';
                                                 $conn = new DbConnect();
                                                 $name = $conn->query("set names 'utf8'");
-                                                $ds = $conn->query('Select * from ChatHoaHoc');
-                                                while ($row = $ds->fetch_assoc()) {
+                                                $ds = $conn->query('Select * from ChatHoaHoc order by TenHoaHoc asc');
+                                                while ($row= mysqli_fetch_array($ds)) {
                                                     echo '<option value="' . $row['TenHoaHoc'] . '">' . $row['TenHoaHoc'] . '</option>';
                                                 }
                                                 ?>         
@@ -76,8 +76,8 @@
                                                 require_once 'DBConnect.php';
                                                 $conn = new DbConnect();
                                                 $name = $conn->query("set names 'utf8'");
-                                                $ds = $conn->query('Select * from ChatHoaHoc');
-                                                while ($row = $ds->fetch_assoc()) {
+                                                $ds = $conn->query('Select * from ChatHoaHoc order by TenHoaHoc asc');
+                                                while ($row= mysqli_fetch_array($ds)) {
                                                     echo '<option value="' . $row['TenHoaHoc'] . '">' . $row['TenHoaHoc'] . '</option>';
                                                 }
                                                 ?>         
@@ -92,7 +92,7 @@
                                                 $conn = new DbConnect();
                                                 $name = $conn->query("set names 'utf8'");
                                                 $ds = $conn->query('Select * from LoaiPhanUng');
-                                                while ($row = $ds->fetch_assoc()) {
+                                                while ($row= mysqli_fetch_array($ds)) {
                                                     echo '<option value="' . $row['IdLoaiPhanUng'] . '">' . $row['TenLoaiPhanUng'] . '</option>';
                                                 }
                                                 ?>         
@@ -103,10 +103,7 @@
 					<p>Chọn hình ảnh PƯ</p>
                                             <input type="file" class="form-control"  name="txtAnh" value="" required=""/>
                                         </div>
-                                        <div class="form-group">
-					<p>Chọn âm thanh PƯ</p>
-                                            <input type="file" class="form-control"  name="txtAudio" accept=""  value="" required=""/>
-                                        </div>
+                                        
                                         <input type="submit" tabindex="1" class="btnRegister"  value="Save" name="btnDangKy"/>
                                     </div>
                                 </div>
@@ -126,7 +123,7 @@
             $sp2 = $_POST['SP2'];
             $loaipu = $_POST['LoaiPU'];
             $file = $_FILES['txtAnh'];
-            $fileau = $_FILES['txtAudio'];
+//            $fileau = $_FILES['txtAudio'];
             
             if (!isset($_FILES['txtAnh'])) {
                 echo '<script>alert("Lỗi."); </script>';
@@ -137,7 +134,7 @@
             
             $conn = new DbConnect();
             $name = $conn->query("set names 'utf8'");
-            $conn->ThemPhanUng($chat1, $chat2, $sp1, $sp2, $loaipu, $file['name'], $fileau['name']);
+            $conn->ThemPhanUng($chat1, $chat2, $sp1, $sp2, $loaipu, $file['name']);
             
             echo '<script>alert("Thêm thành công."); </script>';
             echo '<script>window.location = "phan_ung_hoa_hoc.php"; </script>';

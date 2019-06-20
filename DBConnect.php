@@ -54,11 +54,11 @@ class DbConnect
         return $stmt5->execute();
     }
     
-    public function ThemPhanUng($chat1, $chat2,$sp1, $sp2, $loaipu, $anh, $audio) 
+    public function ThemPhanUng($chat1, $chat2,$sp1, $sp2, $loaipu, $anh) 
     {
-        $query5 = "INSERT INTO `phanung`(`ChatThamGia1`, `ChatThamGia2`, `ChatSanPham1`, `ChatSanPham2`, `LoaiPhanUng`, `HinhAnh`, `AmThanh`) VALUES (?,?,?,?,?,?,?)";
+        $query5 = "INSERT INTO `phanung`(`ChatThamGia1`, `ChatThamGia2`, `ChatSanPham1`, `ChatSanPham2`, `LoaiPhanUng`, `HinhAnh`) VALUES (?,?,?,?,?,?)";
         $stmt5 = $this->link->prepare($query5);
-        $stmt5->bind_param('ssssiss', $chat1, $chat2,$sp1, $sp2, $loaipu, $anh, $audio);
+        $stmt5->bind_param('ssssis', $chat1, $chat2,$sp1, $sp2, $loaipu, $anh);
         return $stmt5->execute();
     }
     

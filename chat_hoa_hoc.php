@@ -1,11 +1,6 @@
 ﻿
 <!DOCTYPE html>
-<?php
-session_start();
-if (!isset($_SESSION['Admin'])) {
-    echo '<script>window.location = "dang_nhap.php"; </script>';
-}
-?>
+
 <html lang="en">
     <head>
         <meta charset="utf-8">

@@ -43,8 +43,8 @@
                                                 require_once 'DBConnect.php';
                                                 $conn = new DbConnect();
                                                 $name = $conn->query("set names 'utf8'");
-                                                $ds = $conn->query('Select * from LoaiChatHoaHoc');
-                                                 while ($row = $ds -> fetch_assoc())            
+                                                $ds = $conn->query('Select * from LoaiChatHoaHoc order by TenLoai asc');
+                                                 while ($row= mysqli_fetch_array($ds))            
                                                 {
                                                     echo '<option value="'.$row['IdLoai'].'">'.$row['TenLoai'].'</option>';                                                                                                   
                                                 } 
